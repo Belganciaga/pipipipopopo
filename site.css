@@ -306,7 +306,7 @@ body {
 
 
 /* Estilos específicos para dispositivos móveis */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     /* Ajuste de margem para centralizar no modo responsivo */
     .foto-container {
       margin: 0 auto;
