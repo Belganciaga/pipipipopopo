@@ -51,13 +51,35 @@ Agora e sempre, com um amor que é só seu,</p>
           <button class="next-btn">&#8250;</button>
         </div>
      <!-- ... Seu código HTML existente ... -->
-
+     <h2 class="title">Estamos nos amando a:</h2>
+     <div class="countdown-container">
+      <div class="countdown-section">
+          <span class="countdown-digit" id="months">00</span>
+          <span class="countdown-label">Meses</span>
+      </div>
+      <div class="countdown-section">
+          <span class="countdown-digit" id="days">00</span>
+          <span class="countdown-label">Dias</span>
+      </div>
+      <div class="countdown-section">
+          <span class="countdown-digit" id="hours">00</span>
+          <span class="countdown-label">Horas</span>
+      </div>
+      <div class="countdown-section">
+          <span class="countdown-digit" id="minutes">00</span>
+          <span class="countdown-label">Minutos</span>
+      </div>
+      <div class="countdown-section">
+          <span class="countdown-digit" id="seconds">00</span>
+          <span class="countdown-label">Segundos</span>
+      </div>
+  </div>
    <!-- Seção Medidor de Amor -->
 
    <section id="medidor-amor">
     
     <div class="slider-container">
-        <p>MEDIDOR DE AMOR</p>
+      <h2 class="title">MEDIDOR DE AMOR:</h2>
       <input type="range" id="amor-slider" min="0" max="100" value="50" step="5" oninput="updateBattery(this.value)">
       <div class="battery-container">
         <div class="battery">
