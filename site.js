@@ -75,3 +75,34 @@ enviarAmorBtn.addEventListener("click", () => {
   window.location.href = link;
 });
 
+
+
+// Data e horário de referência (ano, mês (0 a 11), dia, horas, minutos, segundos)
+const referenceDateTime = new Date(2023, 3, 19, 13, 18, 0); // 1 de janeiro de 2023, 12:00:00
+
+// Função para calcular o tempo decorrido
+function calculateElapsedTime() {
+    const currentDateTime = new Date();
+    const timeDiff = currentDateTime - referenceDateTime;
+
+    const millisecondsPerMonth = 1000 * 60 * 60 * 24 * 30.44; // Média de dias por mês
+    const months = Math.floor(timeDiff / millisecondsPerMonth);
+    const days = Math.floor((timeDiff % millisecondsPerMonth) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+    // Atualiza os elementos HTML com os valores
+    document.getElementById("months").textContent = String(months).padStart(2, "0");
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+}
+
+// Chama a função inicialmente e a cada segundo
+calculateElapsedTime();
+setInterval(calculateElapsedTime, 1000);
+
+
+
