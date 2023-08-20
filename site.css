@@ -82,6 +82,9 @@ body {
     display: block;
     animation: fadeAnimation 1s ease-in-out; /* Adiciona animação de fade */
   }
+  
+
+  
  /* Estilos do slider */
 /* Estilos do slider */
 /* Estilos do slider */
@@ -90,7 +93,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    
     position: relative;
   }
   
@@ -198,6 +201,67 @@ body {
   .next-btn {
     right: 10px;
   }
+
+  /* Estilos para o contador */
+
+  .title {
+    font-family: "Nome da Fonte Apaixonada", sans-serif; /* Substitua "Nome da Fonte Apaixonada" pela fonte desejada */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #ff0000; /* Cor Vermelha */
+}
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.countdown-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.countdown-digit {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff0000; /* Vermelho */
+  background-color: #000; /* Preto */
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 5px;
+}
+
+.countdown-label {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Estilos adicionais para mobile */
+@media (max-width: 480px) {
+  .countdown-digit {
+      font-size: 2rem;
+      padding: 8px 12px;
+  }
+
+  .countdown-label {
+      font-size: 0.8rem;
+  }
+}
+
+  
   
   #medidor-amor {
     background-color: #fff;
@@ -242,7 +306,7 @@ body {
 
 
 /* Estilos específicos para dispositivos móveis */
-@media screen and (max-width: 554px) {
+@media screen and (max-width: 500px) {
     /* Ajuste de margem para centralizar no modo responsivo */
     .foto-container {
       margin: 0 auto;
@@ -272,4 +336,5 @@ body {
     font-size: 18px;
     line-height: 1.5;
   }
+
   
