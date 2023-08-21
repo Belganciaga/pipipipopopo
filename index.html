@@ -50,7 +50,7 @@ Agora e sempre, com um amor que é só seu,</p>
           <button class="prev-btn">&#8249;</button>
           <button class="next-btn">&#8250;</button>
         </div>
-     <!-- ... Seu código HTML existente ... -->
+     <!-- ... Relogio ... -->
      <h2 class="title">Estamos nos amando a:</h2>
      <div class="countdown-container">
       <div class="countdown-section">
@@ -74,22 +74,123 @@ Agora e sempre, com um amor que é só seu,</p>
           <span class="countdown-label">Segundos</span>
       </div>
   </div>
+
+   <!-- ... CAIXINHA ... -->
+   <div class="finance-box">
+    <div class="container">
+        <div class="black-square">
+            <div class="image-container" id="icon"> 
+                <img src="fotos/fedo.png" alt="Caixa e Porquinho">
+            </div>
+            <div class="finance-info">
+                <h2 class="title">Meta de Economia</h2>
+                <p>Meta: R$ <span id="meta">250.00</span></p>
+                <p>Economizado: <span id="economized">R$ 0.00</span></p>
+                <p>Progresso: <span id="progress">0%</span></p>
+
+                <div class="update-section">
+                  <input type="number" id="monthly-saving" placeholder="Economia mensal">
+                  <button id="update-button">Atualizar</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" id="close-popup">&times;</span>
+    <h1>Controle de metas</h1>
+
+    <div class="popup-content-flex">
+      <div class="existing-metas">
+        
+       
+        <ul class="meta-list" id="meta-list">
+          <h3>Metas fixas</h3>
+          <li>Passagem: R$120</li>
+          <li>Comida: R$130</li>
+          <h3>Metas adicionais</h3>
+          <!-- Aqui serão adicionadas as metas existentes -->
+        </ul>
+      </div>
+
+      <div class="new-meta-form">
+       
+        <label for="nova-meta">Nome da Meta:</label>
+        <input type="text" id="nova-meta">
+        <label for="novo-valor">Valor:</label>
+        <input type="number" id="novo-valor">
+        <button id="adicionar-meta">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
    <!-- Seção Medidor de Amor -->
 
    <section id="medidor-amor">
-    
-    <div class="slider-container">
-      <h2 class="title">MEDIDOR DE AMOR:</h2>
-      <input type="range" id="amor-slider" min="0" max="100" value="50" step="5" oninput="updateBattery(this.value)">
-      <div class="battery-container">
-        <div class="battery">
-          <div class="battery-level" id="battery-level"></div>
+    <div class="black-square3">
+      <div class="slider-container">
+        <h2 class="title">MEDIDOR DE AMOR:</h2>
+        <input type="range" id="amor-slider" min="0" max="100" value="50" step="5" oninput="updateBattery(this.value)">
+        <div class="battery-container">
+          <div class="battery">
+            <div class="battery-level" id="battery-level"></div>
+          </div>
+          <div class="battery-percentage" id="battery-percentage">50%</div>
         </div>
-        <div class="battery-percentage" id="battery-percentage">50%</div>
+        <button id="enviar-amor">Enviar</button>
       </div>
-      <button id="enviar-amor">Enviar</button>
     </div>
-  <!-- ... O restante do seu código HTML ... -->
+  </section>
+  <!-- ... questionario ... -->
+  <div class="questionnaire">
+    <div class="black-square2">
+        <h1 class="title">Hoje você precisa de:</h1>
+        <form id="needs-form">
+            <div class="options-column">
+                <label>
+                    <input type="checkbox" name="needs[]" value="Comida"> Comida
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Carinho"> Carinho
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Atenção"> Atenção
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Cuidados"> Cuidados
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Apoio"> Apoio
+                </label>
+            </div>
+            <div class="options-column">
+                <label>
+                    <input type="checkbox" name="needs[]" value="Ouvir sua voz"> Ouvir sua voz
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Sentir seu cheiro"> Sentir seu cheiro
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Elogios"> Elogios
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Palafra de afirmação"> Palavras de afirmação
+                </label>
+                <label>
+                    <input type="checkbox" name="needs[]" value="Paasar tempo juntas"> Pasar tempo juntas
+                </label>
+                <!-- Adicione mais opções aqui, se necessário -->
+            </div>
+        </form>
+        <button type="button" id="send-button">Enviar</button>
+    </div>
+</div
+
+
   <section id="nossas-musicas">
     <div class="album-container">
         <p>NOSSAS MUSICAS</p>
