@@ -105,4 +105,122 @@ calculateElapsedTime();
 setInterval(calculateElapsedTime, 1000);
 
 
+//CAIXINHA
 
+// Seleção de elementos da caixinha financeira
+const monthlySavingInput = document.getElementById("monthly-saving");
+const updateButton = document.getElementById("update-button");
+const economizedSpan = document.getElementById("economized");
+const progressSpan = document.getElementById("progress");
+const metaElement = document.getElementById("meta");
+
+// Definição da meta inicial e valor total economizado
+let targetAmount = 250;
+let totalSaved = parseFloat(localStorage.getItem("totalSaved")) || 0;
+
+// Atualização da caixinha financeira
+function updateUI() {
+    economizedSpan.textContent = `R$ ${totalSaved.toFixed(2)}`;
+    const progressPercentage = (totalSaved / targetAmount) * 100;
+    progressSpan.textContent = `${progressPercentage.toFixed(2)}%`;
+    metaElement.textContent = `R$ ${targetAmount.toFixed(2)}`;
+}
+
+updateUI();
+
+// Atualização da economia mensal
+updateButton.addEventListener("click", () => {
+    const monthlySaving = parseFloat(monthlySavingInput.value);
+
+    if (!isNaN(monthlySaving)) {
+        totalSaved += monthlySaving;
+        localStorage.setItem("totalSaved", totalSaved);
+        updateUI();
+    }
+});
+
+// Seleção de elementos do pop-up
+const icon = document.getElementById("icon");
+const popup = document.getElementById("popup");
+const closePopupBtn = document.getElementById("close-popup");
+const adicionarMetaBtn = document.getElementById("adicionar-meta");
+const novaMetaInput = document.getElementById("nova-meta");
+const novoValorInput = document.getElementById("novo-valor");
+
+// Abertura do pop-up ao clicar no ícone
+icon.addEventListener("click", function() {
+    popup.style.display = "block";
+});
+
+// Fechamento do pop-up ao clicar no botão de fechar
+closePopupBtn.addEventListener("click", function() {
+    popup.style.display = "none";
+});
+
+// Adição de nova meta ao clicar no botão "Adicionar"
+adicionarMetaBtn.addEventListener("click", function() {
+  const novaMeta = novaMetaInput.value;
+  const novoValor = parseFloat(novoValorInput.value);
+
+  if (novaMeta && !isNaN(novoValor)) {
+      targetAmount += novoValor;
+      localStorage.setItem("targetAmount", targetAmount); // Armazenar a nova meta no Local Storage
+      addMetaToList(novaMeta, novoValor); // Adicionar a nova meta à lista
+      updateUI();
+      popup.style.display = "none";
+      novaMetaInput.value = "";
+      novoValorInput.value = "";
+  }
+});
+
+// Função para adicionar uma meta à lista
+// Função para inicializar a lista de metas
+
+// Função para inicializar a lista de metas
+
+
+function addMetaToList(nomeMeta, valorMeta) {
+
+  
+  const metaList = document.getElementById("meta-list");
+  const listItem = document.createElement("li");
+  const removeButton = document.createElement("button");
+
+  listItem.textContent = `${nomeMeta}: R$ ${valorMeta.toFixed(2)}`;
+  removeButton.textContent = "Remover";
+  removeButton.classList.add("remove-button");
+
+  listItem.appendChild(removeButton);
+  metaList.appendChild(listItem);
+
+  // Adicionar evento de remoção ao botão "Remover"
+  removeButton.addEventListener("click", function() {
+      removeMetaFromList(listItem, valorMeta);
+  });
+}
+// Função para remover uma meta da lista
+function removeMetaFromList(listItem, valorMeta) {
+  const metaList = document.getElementById("meta-list");
+  metaList.removeChild(listItem);
+
+  targetAmount -= valorMeta;
+  localStorage.setItem("targetAmount", targetAmount); // Atualizar a meta no Local Storage
+  updateUI();
+}
+
+
+//https://wa.me/5531986604077?text=sua+namorada+prescisa+de+1+2+3+4+5+6+7+....
+document.getElementById("send-button").addEventListener("click", function () {
+  const checkboxes = document.querySelectorAll("input[name='needs[]']:checked");
+  const selectedNeeds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+  if (selectedNeeds.length > 0) {
+      const message = "Sua namorada precisa de: " + selectedNeeds.join(",");
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappLink = "https://wa.me/5531986604077?text=" + encodedMessage;
+
+      window.location.href = whatsappLink;
+  } else {
+      alert("Selecione pelo menos uma opção!");
+  }
+});
