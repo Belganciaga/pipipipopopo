@@ -210,17 +210,114 @@ function removeMetaFromList(listItem, valorMeta) {
 
 
 //https://wa.me/5531986604077?text=sua+namorada+prescisa+de+1+2+3+4+5+6+7+....
-document.getElementById("send-button").addEventListener("click", function () {
+//document.getElementById("send-button").addEventListener("click", function () {
+  //const checkboxes = document.querySelectorAll("input[name='needs[]']:checked");
+  //const selectedNeeds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+ // if (selectedNeeds.length > 0) {
+      //const message = "Sua namorada precisa de: " + selectedNeeds.join(",");
+      //const encodedMessage = encodeURIComponent(message);
+      //const whatsappLink = "https://wa.me/5531986604077?text=" + encodedMessage;
+
+     // window.location.href = whatsappLink;
+  //} else {
+     // alert("Selecione pelo menos uma opção!");
+ // }
+//})
+
+document.addEventListener("DOMContentLoaded", function () {
+  const thaisCard = document.getElementById("thais-card");
+  const emilyCard = document.getElementById("emily-card");
+
+  thaisCard.addEventListener("click", function () {
+    redirectToWhatsApp("5531989213118");
+  });
+
+  emilyCard.addEventListener("click", function () {
+    // Coloque o número correto para Emily no próximo linha
+    redirectToWhatsApp("5531986604077");
+  });
+
+  document.getElementById("send-button").addEventListener("click", function () {
+    const checkboxes = document.querySelectorAll("input[name='needs[]']:checked");
+    const selectedNeeds = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+    if (selectedNeeds.length > 0) {
+      openPersonSelectionPopup();
+    } else {
+      alert("Selecione pelo menos uma opção!");
+    }
+  });
+});
+
+function redirectToWhatsApp(phoneNumber) {
+  const selectedNeeds = getSelectedNeeds(); // Substitua esta linha pela chamada correta à função que obtém as necessidades selecionadas.
+  
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
+  
+  const message = `Central Luiza Mel informa:
+
+Prezada namorada,
+
+Assunto: Notificação de Acusação e Solicitação de Cooperação
+
+Por meio deste comunicado, informamos que a Central Luiza Mel está conduzindo uma investigação em relação a alegações graves. Você está sendo alvo de acusações relacionadas aos seguintes delitos: abandono de incapaz, tortura (mediante privação alimentar) e negação de assistência emocional.
+
+Solicitamos, de maneira veemente, que coopere com as autoridades e ofereça à sua namorada as seguintes necessidades:${selectedNeeds}. Não cumprir essas diretrizes pode resultar em consequências legais, incluindo multas substanciais e possivelmente prisão.
+
+Diretrizes a serem seguidas:
+${formatSelectedNeedsList(selectedNeeds)}
+
+Reiteramos a seriedade deste assunto e a necessidade de sua total colaboração. Caso tenha dúvidas ou precise de mais informações, entre em contato com a Central Luiza Mel.
+
+Atenciosamente,
+Central Luiza Mel
+Data: ${formattedDate}`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + encodedMessage;
+  function formatSelectedNeedsList(selectedNeeds) {
+    const needsList = selectedNeeds.split(',').map(need => `- ${need.trim()}`).join('\n');
+    return needsList;
+  }
+  
+  // Abre o link em uma nova aba
+  window.open(whatsappLink, "_blank");
+}
+
+
+function getSelectedNeeds() {
   const checkboxes = document.querySelectorAll("input[name='needs[]']:checked");
   const selectedNeeds = Array.from(checkboxes).map(checkbox => checkbox.value);
+  return selectedNeeds.join(",");
+}
 
-  if (selectedNeeds.length > 0) {
-      const message = "Sua namorada precisa de: " + selectedNeeds.join(",");
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappLink = "https://wa.me/5531986604077?text=" + encodedMessage;
+function openPersonSelectionPopup() {
+  const personSelectionPopup = document.getElementById("person-selection-popup");
+  personSelectionPopup.style.display = "block"; // Exibe o pop-up de seleção
+}
 
-      window.location.href = whatsappLink;
+
+const complaintForm = document.getElementById("complaint-form");
+
+complaintForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  
+
+  const complaintFrom = document.getElementById("complaint-from").value;
+  const complaintText = document.getElementById("complaint-text").value;
+
+  let whatsappLink = "";
+  if (complaintFrom === "emily") {
+    whatsappLink = `https://wa.me/553189213118?text=Central+Luizaz+mel+informa+!+!+!+Recebemos+uma+reclamação+de+Thais+sobre+voce+dizendo:${encodeURIComponent(complaintText)}`;
+  } else if (complaintFrom === "thais") {
+    whatsappLink = `https://wa.me/5531986604077?text=Central+Luizaz+mel+informa+!+!+!+Recebemos+uma+reclamação+de+Emily+sobre+voce+dizendo:${encodeURIComponent(complaintText)}`;
+  }
+
+  if (whatsappLink) {
+    window.location.href = whatsappLink;
   } else {
-      alert("Selecione pelo menos uma opção!");
+    alert("Selecione uma opção válida.");
   }
 });
