@@ -2,7 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(121deg, #AD00FF 0%, #0C0056 100%), linear-gradient(121deg, #FA00FF 0%, rgba(0, 255, 71, 0) 100%), linear-gradient(127deg, #00F0FF 0%, #A80000 100%), radial-gradient(107% 142% at 15% 104%, #F3D0FC 0%, #1700A4 100%), radial-gradient(100% 100% at 50% 0%, #7300A9 0%, #00FFE0 100%), radial-gradient(100% 100% at 50% 0%, #7300A9 0%, #00FFE0 100%), linear-gradient(127deg, #B7D500 0%, #2200AA 100%);
+    background-blend-mode: overlay, color, overlay, difference, color-dodge, difference, normal;
+    }
+    
+
   
   header {
     background-color: #008080; /* Verde Água */
@@ -57,7 +65,7 @@ body {
       .carousel-item.active {
         opacity: 1;
       }
-    /* Estilo do carrossel de fotos */
+    /* Est//ilo do carrossel de fotos */
   }
   
   .descricao {
@@ -106,7 +114,7 @@ body {
     outline: none;
     appearance: none;
     background-color: #ff0008;
-    position: relative;
+    position : relative;
   }
   
   /* Estilos da bateria */
@@ -185,9 +193,9 @@ body {
   .prev-btn,
   .next-btn {
     position: absolute;
-    top: 50%;
+    top: 25%;
     transform: translateY(-50%);
-    background-color: #008080; /* Verde Água */
+    background-color: #2600ff; /* Verde Água */
     color: #fff;
     border: none;
     padding: 10px;
@@ -221,9 +229,9 @@ body {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f1f1f1;
+
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   
 }
 
@@ -266,10 +274,10 @@ body {
 
 /* Estilos para a caixa financeira */
 .finance-box {
-  background-color: #fff;
+ 
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
   text-align: center;
 }
 
@@ -314,7 +322,7 @@ body {
 
 
 /* Estilos adicionais para mobile */
-@media (max-width: 610px) {
+@media (max-width: 400px) {
   /* ... */
 }
 
@@ -333,10 +341,10 @@ body {
 }
 
 .popup-content {
-  background-color: #fff;
+ 
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1);
+ 
   text-align: center;
   position: absolute;
   top: 50%;
@@ -433,7 +441,7 @@ body {
   
   
   #medidor-amor {
-    background-color: #fff;
+  
     padding: 20px;
     display: flex;
     align-items: center;
@@ -458,6 +466,107 @@ body {
   
   }
 
+  
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+  
+.complaint-box {
+  width: 400px;
+  height: auto;
+  background-color: #000000;
+  color: rgba(231, 0, 0, 0.904);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.select-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#complaint-from {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #4b4747;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.complaint-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #4b4747;
+  color: rgb(241, 234, 234);
+  border-radius: 5px;
+}
+
+.submit-button {
+  display: block;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #a00;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup button {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.popup button:hover {
+  background-color: #a00;
+}
   
 
   /* Estilos gerais */
@@ -486,10 +595,10 @@ body {
   /* Estilos para o questionário */
 /* Estilos para o questionário */
 .questionnaire {
-  background-color: #fff;
+ 
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -562,11 +671,127 @@ body {
 }
 
 /* Restante do seu CSS... */
+.cards-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
+
+
+@media all and (max-width: 400px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+#emily-card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(255, 3, 3, 0.233),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#emily-card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+#emily-card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+#emily-card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+#emily-card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(255, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+#thais-card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(255, 3, 3, 0.233),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#thais-card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+#thais-card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+#thais-card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+#thais-card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(255, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black
+
+  
 
 
 /* Estilos específicos para dispositivos móveis */
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 400px) {
     /* Ajuste de margem para centralizar no modo responsivo */
     .foto-container {
       margin: 0 auto;
@@ -599,7 +824,7 @@ body {
 
   /* Outros estilos ... */
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .black-square {
     flex-direction: column;
     align-items: center;
@@ -656,3 +881,39 @@ body {
   }
 }
 
+/* Estilos gerais */
+.container {
+  max-width: 1200px; /* Defina um valor máximo para evitar que o conteúdo fique muito amplo em telas grandes */
+  margin: 0 auto;
+  padding: 0 20px; /* Adicione um espaçamento horizontal */
+}
+
+/* Estilos do texto sobre o amor */
+.love-message {
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0 20px; /* Adicione espaçamento horizontal */
+}
+
+.love-message p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Restante do seu CSS... */
+/* ... */
+
+/* Estilos específicos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  /* Ajuste de margem para centralizar no modo responsivo */
+  .foto-container {
+    margin: 0 auto;
+  }
+
+  .descricao {
+    margin: 10px auto;
+  }
+
+  /* Mais ajustes responsivos... */
+}
