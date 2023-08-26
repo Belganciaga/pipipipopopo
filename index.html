@@ -7,14 +7,7 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <header>
-      <h1>T&E</h1>
-    </header>
-    <nav>
-      <a href="#sobre-nos">Sobre Nós</a> |
-      <a href="#medidor-amor">Medidor de Amor</a> |
-      <a href="#nossas-musicas">Nossas Músicas</a>
-    </nav>
+
     <div class="container">
       <section id="sobre-nos">
         <h2>Sobre Nós</h2>
@@ -73,14 +66,14 @@ Agora e sempre, com um amor que é só seu,</p>
           <span class="countdown-digit" id="seconds">00</span>
           <span class="countdown-label">Segundos</span>
       </div>
-  </div>
+     </div>
 
    <!-- ... CAIXINHA ... -->
    <div class="finance-box">
     <div class="container">
         <div class="black-square">
             <div class="image-container" id="icon"> 
-                <img src="fotos/fedo.jpg" alt="Caixa e Porquinho">
+                <img src="fotos/fedo.png" alt="Caixa e Porquinho">
             </div>
             <div class="finance-info">
                 <h2 class="title">Meta de Economia</h2>
@@ -94,13 +87,14 @@ Agora e sempre, com um amor que é só seu,</p>
               </div>
             </div>
         </div>
+      </div>
     </div>
-</div>
+<!--metas-->
 
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn" id="close-popup">&times;</span>
-    <h1>Controle de metas</h1>
+    <div id="popup" class="popup">
+       <div class="popup-content">
+          <span class="close-btn" id="close-popup">&times;</span>
+             <h1>Controle de metas</h1>
 
     <div class="popup-content-flex">
       <div class="existing-metas">
@@ -144,7 +138,27 @@ Agora e sempre, com um amor que é só seu,</p>
         <button id="enviar-amor">Enviar</button>
       </div>
     </div>
+
+    
   </section>
+ <!--central-->
+ <div class="container1">
+  <div class="complaint-box">
+    <h2>Central de Reclamações</h2>
+    <form id="complaint-form">
+      <label for="complaint-from" class="select-label">Voce esta reclamando de quem?</label>
+      <select id="complaint-from">
+        <option value="thais">Thais</option>
+        <option value="emily">Emily</option>
+      </select>
+      <label for="complaint-text" class="select-label">Descreva sua reclamação:</label>
+      <textarea id="complaint-text" class="complaint-textarea" placeholder="Digite sua reclamação aqui..."></textarea>
+      <button type="submit" class="submit-button">Enviar Reclamação</button>
+    </form>
+  </div>
+</div>
+
+
   <!-- ... questionario ... -->
   <div class="questionnaire">
     <div class="black-square2">
@@ -152,45 +166,77 @@ Agora e sempre, com um amor que é só seu,</p>
         <form id="needs-form">
             <div class="options-column">
                 <label>
-                    <input type="checkbox" name="needs[]" value="Comida"> Comida
+                    <input type="checkbox" name="needs[]" value=" Comida "> Comida
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Carinho"> Carinho
+                    <input type="checkbox" name="needs[]" value=" Carinho"> Carinho
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Atenção"> Atenção
+                    <input type="checkbox" name="needs[]" value=" Atenção"> Atenção
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Cuidados"> Cuidados
+                    <input type="checkbox" name="needs[]" value=" Cuidados"> Cuidados
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Apoio"> Apoio
+                    <input type="checkbox" name="needs[]" value=" Apoio"> Apoio
                 </label>
+                <label>
+                  <input type="checkbox" name="needs[]" value=" chamego"> chamego
+              </label>
             </div>
             <div class="options-column">
                 <label>
-                    <input type="checkbox" name="needs[]" value="Ouvir sua voz"> Ouvir sua voz
+                    <input type="checkbox" name="needs[]" value=" Ouvir sua voz"> Ouvir sua voz
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Sentir seu cheiro"> Sentir seu cheiro
+                    <input type="checkbox" name="needs[]" value=" Sentir seu cheiro"> Sentir seu cheiro
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Elogios"> Elogios
+                    <input type="checkbox" name="needs[]" value=" Elogios"> Elogios
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Palafra de afirmação"> Palavras de afirmação
+                    <input type="checkbox" name="needs[]" value=" Palavras de afirmação"> Palavras de afirmação
                 </label>
                 <label>
-                    <input type="checkbox" name="needs[]" value="Paasar tempo juntas"> Pasar tempo juntas
+                    <input type="checkbox" name="needs[]" value=" Pasar tempo juntas"> Pasar tempo juntas
                 </label>
+                <label>
+                  <input type="checkbox" name="needs[]" value=" sapecagem"> sapecagem
+              </label>
                 <!-- Adicione mais opções aqui, se necessário -->
             </div>
         </form>
         <button type="button" id="send-button">Enviar</button>
+        
     </div>
-</div
+    <!-- Popup -->
+    <div id="person-selection-popup" class="popup">
+      <div class="popup-content">
+        <div class="cards-list">
+  
+          <div class id="thais-card">
+            <div class="card_image"> <img src="fotos/eu.jpg" /> </div>
+            <div class="card_title title-white">
+              <p>Cachorrao</p>
+            </div>
+          </div>
+          
+            <div class id="emily-card">
+            <div class="card_image">
+              <img src="fotos/momo.jpg" />
+              </div>
+            <div class="card_title title-white">
+              <p>Ursinha</p>
+            </div>
+          </div>
+      
+          
+          </div>
+      </div>
+  </div>
+ 
 
-
+<!--musicaas-->
   <section id="nossas-musicas">
     <div class="album-container">
         <p>NOSSAS MUSICAS</p>
